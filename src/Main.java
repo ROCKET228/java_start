@@ -1,8 +1,16 @@
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-        int one = 1;
-        System.out.print("Hi World" + one);
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Input your name:");
+        String role = scan.nextLine();
+        if(role == "Admin"){
+            System.out.println("All user");
+        }
+        else {
+            System.out.println("Not Admin");
+        }
     }
 }
