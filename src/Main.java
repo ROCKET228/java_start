@@ -4,9 +4,9 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        System.out.println("Input your name:");
+        System.out.print("Input your name:");
         String role = scan.nextLine();
-        if(role == "Admin"){
+        if(role.equals("Admin")){
             System.out.println("All user");
         }
         else {
