@@ -1,9 +1,14 @@
-import java.util.ArrayList;
+import java.util.LinkedList;
 
 
 public class Main {
 
     public static void main(String[] args) {
-       ArrayList<Integer> numbers = new ArrayList<>();
+        func(1, 2);
+    }
+
+    public static void func(int first, int second){
+        int sum = first + second;
+        System.out.println("Answer: " + sum);
     }
 }
