@@ -4,17 +4,12 @@ import java.util.LinkedList;
 public class Main {
 
     public static void main(String[] args) {
-       int[] numbers = new int[] {5,6,8};
-       System.out.println(sum(numbers));
-    }
+        Transport car = new Transport();
+        car.color = "red";
+        car.speed = 100;
 
-    public static int sum(int[] num){
-        int sum = 0;
-
-        for(Integer i : num){
-            sum += i;
-        }
-
-        return sum;
+        Transport truck = new Transport();
+        truck.speed = 140;
+        truck.color = "Rd"
     }
 }
