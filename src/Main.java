@@ -1,16 +1,9 @@
-import java.util.Scanner;
+import java.util.ArrayList;
+
 
 public class Main {
 
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        System.out.print("Input your name:");
-        String role = scan.nextLine();
-        if(role.equals("Admin")){
-            System.out.println("All user");
-        }
-        else {
-            System.out.println("Not Admin");
-        }
+       ArrayList<Integer> numbers = new ArrayList<>();
     }
 }
