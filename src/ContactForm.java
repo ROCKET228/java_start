@@ -1,28 +1,33 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class ContactForm extends JFrame {
+    JTextField name_field, email_field;
+    JRadioButton male, female;
+    JCheckBox check;
     public  ContactForm(){
         super("Contact Form");
-        super.setBounds(910, 540, 250, 100);
+        super.setBounds(910, 540, 500, 250);
         super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         Container container = super.getContentPane();
-        container.setLayout(new GridLayout(3, 2, 2, 2));
+        container.setLayout(new GridLayout(5, 2, 2, 10));
 
         JLabel name = new JLabel("Input name: ");
-        JTextField name_field = new JTextField("", 1);
+        name_field = new JTextField("", 1);
         JLabel email = new JLabel("Input email: ");
-        JTextField email_field = new JTextField("", 1);
+        email_field = new JTextField("", 1);
 
         container.add(name);
         container.add(name_field);
         container.add(email);
         container.add(email_field);
 
-        JRadioButton male = new JRadioButton("Male");
-        JRadioButton female = new JRadioButton("Female");
-        JCheckBox check = new JCheckBox("Ok?", false);
+        male = new JRadioButton("Male");
+        female = new JRadioButton("Female");
+        check = new JCheckBox("Ok?", false);
         JButton send_button = new JButton("Send");
 
         male.setSelected(true);
@@ -34,5 +39,26 @@ public class ContactForm extends JFrame {
         container.add(check);
         container.add(send_button);
 
+        send_button.addActionListener(new ButtonEventManager());
     }
+
+    class ButtonEventManager implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            String name = name_field.getText();
+            String email = email_field.getText();
+
+            String isMale = "Male";
+            if(male.isSelected()){
+                isMale = "Female";
+            }
+
+            boolean checkBox = check.isSelected();
+            JOptionPane.showMessageDialog(null,
+                    "Your mail" + email + "\nYour gander" + isMale,
+                    "Hi," + name, JOptionPane.PLAIN_MESSAGE);
+        }
+    }
+
 }
