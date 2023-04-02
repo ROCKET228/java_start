@@ -1,4 +1,8 @@
-public class Car extends Transport{
+package Transport;
+
+import Transport.Transport;
+
+public class Car extends Transport {
     public int length;
     public Car(){}
     public Car(int speed, int weight,int length, String color){

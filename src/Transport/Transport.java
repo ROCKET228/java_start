@@ -1,3 +1,5 @@
+package Transport;
+
 public class Transport {
     private int speed, weight;
     private String color;
