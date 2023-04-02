@@ -56,8 +56,8 @@ public class ContactForm extends JFrame {
 
             boolean checkBox = check.isSelected();
             JOptionPane.showMessageDialog(null,
-                    "Your mail" + email + "\nYour gander" + isMale,
-                    "Hi," + name, JOptionPane.PLAIN_MESSAGE);
+                    "Your mail: " + email + "\nYour gander: " + isMale,
+                    "Hi, " + name, JOptionPane.PLAIN_MESSAGE);
         }
     }
 
