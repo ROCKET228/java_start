@@ -8,8 +8,20 @@ public class Task_1_0 {
             array[i] = Math.random();
         }
 
-        int max = 0;
-        int min = 0;
-        int average = 0;
+        double max = 0;
+        double min = 0;
+        double average = 0;
+        for(int i = 0; i < array.length; i++){
+            if(max <= array[i]){
+                max = array[i];
+            }
+            if(min >= array[i]){
+                min = array[i];
+            }
+            average += array[i]/array.length;
+        }
+        System.out.println("Max: " + max);
+        System.out.println("Min: " + min);
+        System.out.println("Average: " + average);
     }
 }
