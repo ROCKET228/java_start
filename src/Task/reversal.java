@@ -7,14 +7,17 @@ import java.util.*;
 public class reversal {
     public static void main(String[] args) throws IOException {
         ArrayList<String> numbers = new ArrayList<>();
+        ArrayList <String> lines = new ArrayList<>();
         StringBuilder out = new StringBuilder();
         String str;
         FileReader file = new FileReader("input.txt"); // Считывание данных из файла
         Scanner sc = new Scanner(file);
-        str = sc.nextLine();
-        str = sc.nextLine();
-        StringTokenizer st = new StringTokenizer(str, " ");
-        while(st.hasMoreTokens()){
+        while (sc.hasNextLine()){
+            str = sc.nextLine();
+            lines.add(str);
+        }
+        StringTokenizer st = new StringTokenizer(lines.get(1), " ");
+        while (st.hasMoreTokens()){
             numbers.add(st.nextToken());
         }
 
