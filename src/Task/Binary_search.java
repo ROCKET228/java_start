@@ -4,24 +4,25 @@ import java.util.Arrays;
 
 public class Binary_search {
     public static void main(String[] args) {
-        double[] array = generateRandomArray(100000000);
-        Arrays.sort(array); // нужно сначала отсортировать
+        int[] array = generateRandomArray(100000000);
+        Arrays.sort(array);
+        System.out.println(Arrays.toString(array));
         long time = System.currentTimeMillis(); // текущее время, unix-time
-        System.out.println("Answer:" + bruteForce(array, 0.5));
+        System.out.println("Answer:" + bruteForce(array, 999999));
         System.out.println(System.currentTimeMillis() - time);
 
         time = System.currentTimeMillis();
-        System.out.println("Answer:" + binarySearch(array, 0.5));
+        System.out.println("Answer:" + binarySearch(array, 999999));
         System.out.println(System.currentTimeMillis() - time);
     }
 
-    private static int binarySearch(double[] array, double target){
+    private static int binarySearch(int[] array, int target){
         int low = 0;
         int heigh = array.length - 1;
 
         while (low <= heigh){
             int mid = (low + heigh);
-            double midVal = array[mid];
+            int midVal = array[mid];
             if (midVal < target){
                 low = mid + 1;
             } else if (midVal > target) {
@@ -34,7 +35,7 @@ public class Binary_search {
         return -1;
     }
 
-    public static int bruteForce(double[] array, double key) {
+    public static int bruteForce(int[] array, int key) {
         for (int i = 0; i < array.length; i++) {
             if (array[i] == key)
                 return i;
@@ -42,10 +43,10 @@ public class Binary_search {
         return -1;
     }
 
-    private static double[] generateRandomArray(int length) {
-        double[] array = new double[length];
+    private static int[] generateRandomArray(int length) {
+        int[] array = new int[length];
         for (int i = 0; i < array.length; i++) {
-            array[i] = Math.random();
+            array[i] = (int) (Math.random() * 1000000);
         }
         return array;
     }
