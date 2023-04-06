@@ -4,15 +4,15 @@ import java.util.Arrays;
 
 public class Binary_search {
     public static void main(String[] args) {
-        int[] array = generateRandomArray(100000000);
+        int[] array = generateRandomArray(1000);
         Arrays.sort(array);
         System.out.println(Arrays.toString(array));
         long time = System.currentTimeMillis(); // текущее время, unix-time
-        System.out.println("Answer:" + bruteForce(array, 999999));
+        System.out.println("Answer:" + bruteForce(array, 500));
         System.out.println(System.currentTimeMillis() - time);
 
         time = System.currentTimeMillis();
-        System.out.println("Answer:" + binarySearch(array, 999999));
+        System.out.println("Answer:" + binarySearch(array, 500));
         System.out.println(System.currentTimeMillis() - time);
     }
 
@@ -21,7 +21,8 @@ public class Binary_search {
         int heigh = array.length - 1;
 
         while (low <= heigh){
-            int mid = (low + heigh);
+            int mid = (low + heigh)/2;
+            System.out.println(mid);
             int midVal = array[mid];
             if (midVal < target){
                 low = mid + 1;
