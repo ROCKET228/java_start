@@ -21,7 +21,6 @@ public class Zero {
                 count = 0;
             }
         }
-
         FileWriter fileWriter = new FileWriter("output.txt");
         fileWriter.write(Integer.toString(numberOfZero));
         fileWriter.close();
