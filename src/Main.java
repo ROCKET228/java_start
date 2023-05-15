@@ -2,22 +2,30 @@
 import java.util.*;
 
 public class Main {
-    public static int removeElement(int[] nums, int val) {
-        int j = 0;
-        for(int i = 0; i < nums.length; i++){
-            if(nums[i] != val){
-                System.out.println(nums[j]);
-                nums[j] = nums[i];
-                System.out.println(nums[j]);
-                j++;
+    public static int searchInsert(int[] nums, int target) {
+        int right = nums.length;
+        int left = 0;
+        int mid = (right + left)/2;
+        while(left <= right){
+            mid = (right + left)/2;
+
+            if(nums[mid] < target){
+
+                left = mid + 1;
+            }else if(nums[mid] > target){
+
+                right = mid - 1;
+            }else if(nums[mid] == target){
+                return mid;
             }
         }
-        System.out.println(Arrays.toString(nums) + j);
-        return j;
+        return 0;
     }
+
+
     public static void main(String[] args) throws InterruptedException {
-        int[] nums = {3,2,2,3};
-        removeElement(nums, 3);
+        int[] nums = {1,3,5,6};
+        System.out.println(searchInsert(nums, 7));
     }
 
 }
